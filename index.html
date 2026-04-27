@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>llms.txt</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body { max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: sans-serif; }
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+  <script>
+    fetch('llms.txt')
+      .then(r => r.text())
+      .then(text => {
+        document.getElementById('content').innerHTML = marked.parse(text);
+      });
+  </script>
+</body>
+</html>
